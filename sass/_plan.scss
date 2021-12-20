@@ -1,0 +1,122 @@
+.plan {
+   padding-bottom: 150px;
+   &-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 40px;
+   }
+   &-item {
+      border: 1px solid $gray-light;
+      border-radius: 20px;
+      padding: 70px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+   }
+   &-name {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 25px;
+   }
+   &-price {
+      font-size: 20px;
+      font-weight: 500;
+      padding-bottom: 40px;
+      border-bottom: 1px solid $gray-light;
+      margin-bottom: 30px;
+      position: relative;
+   }
+   &-symbol {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      font-size: 20px;
+   }
+   &-month {
+      font-weight: 600;
+      font-size: 40px;
+      margin-left: 14px;
+   }
+   &-desc {
+      margin-bottom: 50px;
+   }
+   &-feature {
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 500;
+   }
+   &-feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      color: $gray;
+      font-weight: 300;
+      &:last-child {
+         margin-bottom: 75px;
+      }
+   }
+   &-feature-icon {
+      font-size: 20px;
+      color: $gray-blur;
+      margin-right: 10px;
+   }
+   &-start {
+      margin: auto auto 0;
+      display: block;
+      width: max-content;
+   }
+   &-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px 25px;
+      background-color: $pink;
+      color: white;
+      text-transform: capitalize;
+      border-radius: 0 20px 0 20px;
+   }
+   @media (hover: hover) {
+      &-start:hover {
+         border-color: $primary-color;
+         background-color: $primary-color;
+         color: white;
+      }
+      &-item:hover {
+         border-color: transparent;
+         box-shadow: 0 0 50px 10px rgba(black, 0.03);
+      }
+   }
+   @media screen and (max-width: 1023.98px) {
+      &-list {
+         display: grid;
+         justify-content: flex-start;
+         grid-auto-columns: 450px;
+         grid-auto-flow: column;
+         grid-gap: 0 50px;
+         overflow: auto;
+         overflow-y: hidden;
+         scroll-snap-type: x mandatory;
+         scroll-snap-stop: always;
+         -ms-touch-action: manipulation;
+         touch-action: manipulation;
+         -webkit-overflow-scrolling: touch;
+         grid-template-columns: unset;
+         &::-webkit-scrollbar {
+           display: none;
+           width: 0;
+         }
+         & > *{
+           scroll-snap-align: center;
+           width: 100%;
+         }
+      }
+   }
+   @media screen and (max-width: 767.98px) {
+      padding-bottom: 80px;
+      &-list {
+         grid-auto-columns: 80%;
+      }
+   }
+   
+}
